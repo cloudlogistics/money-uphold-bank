@@ -105,11 +105,11 @@ class Money
       end
 
       def read_from_url
-        open(source_url).read
+        URI.open(source_url).read
       end
 
       def source_url
-        URI.join(UPHOLD_TICKERS_BASE_URL, source)
+        URI.join(UPHOLD_TICKERS_BASE_URL, source).to_s
       end
     end
   end
